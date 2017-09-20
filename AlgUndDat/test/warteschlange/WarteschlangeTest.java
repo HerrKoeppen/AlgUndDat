@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package warteschlage;
+package warteschlange;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author K
  */
-public class WarteschlageTest {
+public class WarteschlangeTest {
     
-    public WarteschlageTest() {
+    public WarteschlangeTest() {
     }
     
     @BeforeClass
@@ -44,7 +44,7 @@ public class WarteschlageTest {
     public void testHintenEinfuegen() {
         System.out.println("hintenEinfuegen");
         Object o = new Object();
-        Warteschlage instance = new Warteschlage(1);
+        Warteschlange instance = new Warteschlange();
         instance.hintenEinfuegen(o);
         // TODO review the generated test code and remove the default call to fail.
         assertEquals(instance.vorneEntnehmen(),o);
@@ -56,7 +56,7 @@ public class WarteschlageTest {
     @Test
     public void testVorneEntnehmen() {
         System.out.println("vorneEntnehmen");
-        Warteschlage instance = new Warteschlage(1);
+        Warteschlange instance = new Warteschlange();
         Object expResult = new Object();
         instance.hintenEinfuegen(expResult);
         Object result = instance.vorneEntnehmen();
@@ -69,7 +69,7 @@ public class WarteschlageTest {
     @Test
     public void testAnzahlGeben() {
         System.out.println("anzahlGeben");
-        Warteschlage instance = new Warteschlage(5);
+        Warteschlange instance = new Warteschlange();
         instance.hintenEinfuegen(new Object());
         instance.hintenEinfuegen(new Object());
         instance.hintenEinfuegen(new Object());
@@ -86,8 +86,8 @@ public class WarteschlageTest {
     @Test
     public void testIstLeer() {
         System.out.println("istLeer");
-        Warteschlage instance = new Warteschlage(3);
-        Warteschlage instance2 = new Warteschlage(3);
+        Warteschlange instance = new Warteschlange();
+        Warteschlange instance2 = new Warteschlange();
         instance2.hintenEinfuegen(new Object());
         instance2.hintenEinfuegen(new Object());
         boolean expResult1 = true;
@@ -96,18 +96,6 @@ public class WarteschlageTest {
         boolean result2 = instance2.istLeer();
         assertEquals(expResult1, result1);
         assertEquals(expResult2, result2);
-    }
-
-    /**
-     * Test of main method, of class Warteschlage.
-     */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        Warteschlage.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

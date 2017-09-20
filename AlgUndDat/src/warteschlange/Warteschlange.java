@@ -3,24 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package warteschlage;
+package warteschlange;
 
 /**
  *
  * @author K
  */
-public class Warteschlage {
+public class Warteschlange {
     int anzahl;
     Object[] dieWarteschlange;
-    public Warteschlage(int elementAnzahl){
-        //TODO add some Code
+    public Warteschlange(){
+        dieWarteschlange = new Object[6];
+        anzahl=0;
     }
     /**
      * Fügt das Element o an erster freier Stelle von hinten ein
      * @param o eingefuegtes Objekt
      */
     public void hintenEinfuegen(Object o){
-        
+        if(anzahl==6){
+            System.out.println("Fehler! Warteschlange voll!");
+        }
+        else{
+            dieWarteschlange[anzahl] = o;
+            anzahl=anzahl+1;
+        }
     }
     /**
      * gibt das Element in der Warteschlange an erster Stelle aus
