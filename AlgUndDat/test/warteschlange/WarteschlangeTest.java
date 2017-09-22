@@ -97,5 +97,17 @@ public class WarteschlangeTest {
         assertEquals(expResult1, result1);
         assertEquals(expResult2, result2);
     }
+
+    /**
+     * Test of main method, of class Warteschlange.
+     */
+    @Test
+    public void testMain() {
+        System.out.println("main");
+        String[] args = null;
+        Warteschlange.main(args);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
     
 }
