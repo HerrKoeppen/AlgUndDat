@@ -15,7 +15,7 @@ public class Liste {
 
     public Liste() {
     }
-
+    
     public int anzahlGeben() {
         return -1;
     }
@@ -27,9 +27,17 @@ public class Liste {
     public Knoten knotenGeben(int position) {
         return null;
     }
-
+    /**
+     * Sucht die Position eines Knotens k in der Liste.
+     * @param k Knoten, der in der Liste gesucht werden soll
+     * @return -1, wenn der Knoten nicht in der Lste vorkommt oder wenn die Liste leer ist. Sonst eine Zahl, die die Position des Knotens darstellt.
+     */
     public int positionSuchen(Knoten k) {
-        return -1;
+        if (anzahlGeben()==0){
+            return -1;
+        }
+        Knoten erster = erstenGeben();
+        
     }
 
     public void obenEinfuegen(Knoten k) {

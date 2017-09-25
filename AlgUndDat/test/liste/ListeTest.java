@@ -37,7 +37,7 @@ public class ListeTest {
     @After
     public void tearDown() {
     }
-
+    
     /**
      * Test of anzahlGeben method, of class Liste.
      */
