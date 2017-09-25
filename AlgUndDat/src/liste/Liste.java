@@ -58,5 +58,6 @@ public class Liste {
  *  gibt inhalt der Liste aus?
  */
     public void anzahlAktualisieren() {
+        
     }
 }
