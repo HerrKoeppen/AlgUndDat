@@ -43,12 +43,15 @@ public class Liste {
     public void obenEinfuegen(Knoten k) {
     
     }
-/**
- * 
- * @return 
- */
+
+    /**
+     * gibt den obersten Knoten der Liste zurück
+     *
+     * @return der oberste Knoten oder null, wenn die Liste leer ist.
+     */
     public Knoten obenEntnehmen() {
         return null;
+
     }
 
     public void listenInhaltGeben() {
