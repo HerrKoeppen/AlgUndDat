@@ -41,15 +41,22 @@ public class Liste {
     }
 
     public void obenEinfuegen(Knoten k) {
+    
     }
-
+/**
+ * 
+ * @return 
+ */
     public Knoten obenEntnehmen() {
         return null;
     }
 
     public void listenInhaltGeben() {
+        return;
     }
-
+/** Liste Inhalt geben:
+ *  gibt inhalt der Liste aus?
+ */
     public void anzahlAktualisieren() {
     }
 }
