@@ -17,7 +17,7 @@ public class Liste {
     public Liste() {
         erster = null;
     }
-    
+
     public int anzahlGeben() {
         return -1;
     }
@@ -29,18 +29,21 @@ public class Liste {
     public Knoten knotenGeben(int position) {
         return null;
     }
+
     /**
      * Sucht die Position eines Knotens k in der Liste.
+     *
      * @param k Knoten, der in der Liste gesucht werden soll
-     * @return -1, wenn der Knoten nicht in der Lste vorkommt oder wenn die Liste leer ist. Sonst eine Zahl, die die Position des Knotens darstellt.
+     * @return -1, wenn der Knoten nicht in der Lste vorkommt oder wenn die
+     * Liste leer ist. Sonst eine Zahl, die die Position des Knotens darstellt.
      */
     public int positionSuchen(Knoten k) {
-        if (anzahlGeben()==0){
+        if (anzahlGeben() == 0) {
             return -1;
         }
         Knoten vergleich = erstenGeben();
-        for (int i =1;i<=anzahlGeben();i=i+1){
-            if(vergleich.equals(k)){
+        for (int i = 1; i <= anzahlGeben(); i = i + 1) {
+            if (vergleich.equals(k)) {
                 return i;
             }
             vergleich = vergleich.naechsterGeben();
@@ -50,7 +53,7 @@ public class Liste {
     }
 
     public void obenEinfuegen(Knoten k) {
-    
+
     }
 
     /**
@@ -66,10 +69,11 @@ public class Liste {
     public void listenInhaltGeben() {
         return;
     }
-/** Liste Inhalt geben:
- *  gibt inhalt der Liste aus?
- */
+
+    /**
+     * Liste Inhalt geben: gibt inhalt der Liste aus?
+     */
     public void anzahlAktualisieren() {
-        
+
     }
 }
