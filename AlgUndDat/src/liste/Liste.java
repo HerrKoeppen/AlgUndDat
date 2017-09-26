@@ -12,8 +12,10 @@ package liste;
 public class Liste {
 
     public int anzahl;
+    public Knoten erster;
 
     public Liste() {
+        erster = null;
     }
     
     public int anzahlGeben() {
@@ -36,8 +38,15 @@ public class Liste {
         if (anzahlGeben()==0){
             return -1;
         }
-        Knoten erster = erstenGeben();
-        
+        Knoten vergleich = erstenGeben();
+        for (int i =1;i<=anzahlGeben();i=i+1){
+            if(vergleich.equals(k)){
+                return i;
+            }
+            vergleich = vergleich.naechsterGeben();
+        }
+        //k kommt nicht vor, der Vergleich mit allen Knoten ist negativ gewesen
+        return -1;
     }
 
     public void obenEinfuegen(Knoten k) {

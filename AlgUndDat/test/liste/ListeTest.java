@@ -38,6 +38,23 @@ public class ListeTest {
     public void tearDown() {
     }
     
+    public Liste testListeErzeugen(){
+        Element e1 = new Element("Ananas");
+        Element e2 = new Element("Birne");
+        Element e3 = new Element("Citrone");
+        Element e4 = new Element("Dattel");
+        Knoten k1 = new Knoten(e1);
+        Knoten k2 = new Knoten(e2);
+        k1.naechsterSetzen(k2);
+        Knoten k3 = new Knoten(e3);
+        k2.naechsterSetzen(k3);
+        Knoten k4 = new Knoten(e4);
+        k3.naechsterSetzen(k4);
+        Liste testListe = new Liste();
+        testListe.erster = k1;
+        return testListe;
+    }
+    
     /**
      * Test of anzahlGeben method, of class Liste.
      */
@@ -51,6 +68,13 @@ public class ListeTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+    public void t7AnzahlGeben(){
+        System.out.println("anzahlGeben - Testfall 7");
+        Liste instance = testListeErzeugen();
+        int expResult = 4;
+        int result = instance.anzahlGeben();
+        assertEquals(expResult, result);
+    }
 
     /**
      * Test of erstenGeben method, of class Liste.
@@ -63,7 +87,15 @@ public class ListeTest {
         Knoten result = instance.erstenGeben();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("This is a prototype!");
+    }
+    public void t7ErstenGeben(){
+        System.out.println("erstenGeben - Testfall 7");
+        Liste instance = new Liste(); //Randfall!! Liste ist leer!
+        Knoten expResult = null;
+        Knoten result = instance.erstenGeben();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
@@ -80,6 +112,19 @@ public class ListeTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+    public void t7KnotenGeben() {
+        System.out.println("knotenGeben - Testfall 7");
+        int position = 3;
+        Liste instance = testListeErzeugen();
+        Element e3 = new Element("Citrone");
+        Element e4 = new Element("Dattel");
+        Knoten k1 = new Knoten(e3); //Teilnachbau der Liste, ist aber nicht das identische Objekt.
+        Knoten k2 = new Knoten(e4);
+        k1.naechsterSetzen(k2);
+        Knoten expResult = k1;
+        Knoten result = instance.knotenGeben(position);
+        assertEquals(expResult, result);
+    }
 
     /**
      * Test of positionSuchen method, of class Liste.
@@ -94,6 +139,15 @@ public class ListeTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+    }
+    public void t7PositionSuchen() {
+        System.out.println("positionSuchen - Testfall 7");
+        Liste instance = testListeErzeugen();
+        Element e4 = new Element("Dattel");
+        Knoten k = new Knoten(e4);
+        int expResult = 4;
+        int result = instance.positionSuchen(k);
+        assertEquals(expResult, result);
     }
 
     /**

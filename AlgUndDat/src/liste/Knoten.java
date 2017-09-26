@@ -12,17 +12,23 @@ package liste;
 public class Knoten {
 
     Element e;
+    Knoten naechster;
 
-    public Knoten() {
-
+    public Knoten(Element inhalt) {
+        e = inhalt;
+        naechster = null;
+    }
+    public Knoten(Element inhalt, Knoten derNaechste){
+        e = inhalt;
+        naechster = derNaechste;
     }
 
     public void naechsterSetzen(Knoten k) {
-
+        naechster = k;
     }
 
     public Knoten naechsterGeben() {
-        return null;
+        return naechster;
     }
 
 }
