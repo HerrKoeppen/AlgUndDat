@@ -91,14 +91,18 @@ public class Liste {
         return knotenAlt;
     }
 
+    /**
+     * Liste Inhalt geben: gibt inhalt der Liste aus?
+     */
     public void listenInhaltGeben() {
         return;
     }
 
     /**
-     * Liste Inhalt geben: gibt inhalt der Liste aus?
+     * Überprüft die Anzahl der Elemente in der Liste und überschreibt den Wert
+     * anzahl.
      */
     public void anzahlAktualisieren() {
-
+        System.out.println("Es befinden sich jetzt " + anzahl + " Objekte in der Liste.");
     }
 }
