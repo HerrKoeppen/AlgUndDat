@@ -18,17 +18,17 @@ public class Liste {
         erster = null;
     }
 
+    /*
+    @return gibt die Anzahl aller Knoten wieder
+     */
     public int anzahlGeben() {
-        
-        
-      
+
         return anzahl;
     }
+
     /*
     return: Anzahl aller Elemente in der Liste
-    */
-    
-    
+     */
 
     public Knoten erstenGeben() {
         return null;
