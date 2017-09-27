@@ -70,9 +70,16 @@ public class Liste {
         return -1;
     }
 
+    
+    /** Fügt Knoten K als in die Liste ein ( an erster Stelle)
+     * 
+     */ 
     public void obenEinfuegen(Knoten k) {
-
+    k.naechsterSetzen(erstenGeben()); // hängt körbe an Knoten K
+    erster = k;                       // Hängt K ans Stativ ( setzt k als neues erstes element
+    anzahl = anzahl +1;               // Aktualisiert Anzahl
     }
+    
 
     /**
      * gibt den obersten Knoten der Liste zurück und entfernt diesen aus der
@@ -92,12 +99,22 @@ public class Liste {
     }
 
     /**
-     * Liste Inhalt geben: gibt inhalt der Liste aus?
+     * Rückgabe-methode
+     * druckt nach einander knoten und dazugehörigen Element aus
      */
     public void listenInhaltGeben() {
-        return;
+    boolean t = false;            // Bedingung für whileschleife (gibt es keinen Nächsten Knoten? )
+    Knoten p = erstenGeben();     // erster knoten
+    while (t == false){           
+      System.out.println(p);      // druckt Knoten aus (nach reihenfolge)
+      System.out.println(p.e);    // gibt dazugehöriges Element aus
+      p = p.naechsterGeben();     // 
+      if (p == null) {            //prüft auf nächsten knoten, wenn nicht existent: leitet ende ein
+       t = true;    
+      }
     }
-
+    }
+   
     /**
      * Überprüft die Anzahl der Elemente in der Liste und überschreibt den Wert
      * anzahl.
@@ -106,3 +123,10 @@ public class Liste {
         System.out.println("Es befinden sich jetzt " + anzahl + " Objekte in der Liste.");
     }
 }
+
+
+
+
+
+   
+    
