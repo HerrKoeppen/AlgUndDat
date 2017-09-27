@@ -35,7 +35,7 @@ public class Liste {
      * @return
      */
     public Knoten erstenGeben() {
-        return null;
+        return erster;
     }
 
     /**
@@ -45,7 +45,16 @@ public class Liste {
      */
     
     public Knoten knotenGeben(int position) {
-        return null;
+        if (( position < 1) || (position > anzahl)) {
+            System.out.println("Fehler");
+            return null;
+        }
+        Knoten k = erster;
+        for(int i = 1; i < position - 1; i++) {
+            k = k.naechsterGeben ();
+        }
+        return k;
+        
     }
 
     /**
