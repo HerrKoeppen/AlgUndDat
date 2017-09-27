@@ -38,6 +38,12 @@ public class Liste {
         return null;
     }
 
+    /**
+     * gibt die position des Knoten wieder.
+     * @param position
+     * @return 
+     */
+    
     public Knoten knotenGeben(int position) {
         return null;
     }
