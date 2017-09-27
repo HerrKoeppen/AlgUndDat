@@ -57,13 +57,20 @@ public class Liste {
     }
 
     /**
-     * gibt den obersten Knoten der Liste zurück
+     * gibt den obersten Knoten der Liste zurück und entfernt diesen aus der
+     * Liste. Der vormalig 2. Knoten ist nun also der neue erste Knoten.
      *
      * @return der oberste Knoten oder null, wenn die Liste leer ist.
      */
     public Knoten obenEntnehmen() {
-        return null;
-
+        Knoten knotenAlt = erster;
+        if (erster == null) {
+            return null;
+        } else {
+            erster = erster.naechsterGeben(); //Wenn der nachfolger des ersten Knoten null war, dann ist die Liste nun leer.
+            anzahl = anzahl - 1;
+        }
+        return knotenAlt;
     }
 
     public void listenInhaltGeben() {
