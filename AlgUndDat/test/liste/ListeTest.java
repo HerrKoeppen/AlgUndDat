@@ -103,6 +103,17 @@ public class ListeTest {
         assertEquals(expResult, result);
 
     }
+    
+    public void t1AnzahlGeben(){
+        
+        System.out.println("anzahlGeben - Testfall 1");
+        Liste test1 = new Liste();
+        
+        int result = test1.anzahlGeben();
+        int falseResult = -1000;            // Fehlerfall: die Anzahl kann nicht negativ sein
+        assertEquals(result, falseResult); 
+    
+    }
 
     /**
      * Test of erstenGeben method, of class Liste.
@@ -163,6 +174,25 @@ public class ListeTest {
         assertEquals(expResult, result);
     }
 
+    public void t1ErstenGeben() {
+        System.out.println("erstenGeben - Testfall 1");
+        
+        Element e1 = new Element("Ananas");
+        Element e2 = new Element("Birne");
+        
+        Knoten k1 = new Knoten(e1);
+        Knoten k2 = new Knoten(e2);
+        k1.naechsterSetzen(k2);
+        
+        Liste testListe = new Liste();
+        testListe.erster = k1;
+        Liste test = new Liste();
+        
+        
+        
+        String falseResult = "%";
+        assertEquals(expResult, falseResult);
+    }
     /**
      * Test of knotenGeben method, of class Liste.
      */

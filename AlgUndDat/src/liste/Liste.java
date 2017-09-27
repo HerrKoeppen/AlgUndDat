@@ -40,10 +40,10 @@ public class Liste {
 
     /**
      * gibt die position des Knoten wieder.
+     *
      * @param position
-     * @return 
+     * @return
      */
-    
     public Knoten knotenGeben(int position) {
         if (( position < 1) || (position > anzahl)) {
             System.out.println("Fehler");
@@ -129,6 +129,16 @@ public class Liste {
      * anzahl.
      */
     public void anzahlAktualisieren() {
+
+        Knoten h = erster;
+        int neuAnzahl = 0;
+
+        while (h != null) {
+            neuAnzahl = neuAnzahl+1;
+            h = h.naechsterGeben();
+        }
+        
+        anzahl = neuAnzahl;
         System.out.println("Es befinden sich jetzt " + anzahl + " Objekte in der Liste.");
     }
 }
