@@ -60,19 +60,22 @@ public class ListeTest {
      */
     @Test
     public void testAnzahlGeben() {
-        System.out.println("anzahlGeben");
-        Liste instance = new Liste();
-        int expResult = 0;
-        int result = instance.anzahlGeben();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        t3AnzahlGeben();
+        t7AnzahlGeben();
     }
 
     public void t7AnzahlGeben() {
         System.out.println("anzahlGeben - Testfall 7");
         Liste instance = testListeErzeugen();
         int expResult = 4;
+        int result = instance.anzahlGeben();
+        assertEquals(expResult, result);
+    }
+
+    public void t3AnzahlGeben() {
+        System.out.println("anzahlGeben - Testfall 3");
+        Liste instance = new Liste();
+        int expResult = 0;
         int result = instance.anzahlGeben();
         assertEquals(expResult, result);
     }
@@ -146,6 +149,18 @@ public class ListeTest {
         Knoten result = instance.erstenGeben();
         assertEquals(expResult, result);
 
+    public void t3ErstenGeben() {
+        System.out.println("erstenGeben - Testfall 3");
+        Liste instance = new Liste();
+        Element e1 = new Element("Apfel");
+        Element e2 = new Element("Mango");
+        Knoten k1 = new Knoten(e1);//*Neuer Knoten k1
+        Knoten k2 = new Knoten(e2);  //*Neuer Knoten k2
+        instance.obenEinfuegen(k2);
+        instance.obenEinfuegen(k1);
+        Knoten expResult = k1;
+        Knoten result = instance.erstenGeben();
+        assertEquals(expResult, result);
     }
 
     /**
@@ -202,11 +217,26 @@ public class ListeTest {
 
     }
 
+    public void t3KnotenGeben() {
+        System.out.println("knotenGeben - Testfall 3");
+        int position = 3;
+        Liste instance = testListeErzeugen();
+        Element e3 = new Element("Aprikose");
+        Element e4 = new Element("Banane");
+        Knoten k1 = new Knoten(e3); //Teilnachbau der Liste, ist aber nicht das identische Objekt.
+        Knoten k2 = new Knoten(e4);
+        k1.naechsterSetzen(k2);
+        Knoten expResult = k1;
+        Knoten result = instance.knotenGeben(position);
+        assertEquals(expResult, result);
+    }
+
     /**
      * Test of positionSuchen method, of class Liste.
      */
     @Test
     public void testPositionSuchen() {
+
         System.out.println("positionSuchen");
         Knoten k = null;
         Liste instance = new Liste();
