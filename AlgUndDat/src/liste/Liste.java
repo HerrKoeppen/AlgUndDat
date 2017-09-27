@@ -29,7 +29,11 @@ public class Liste {
     /*
     return: Anzahl aller Elemente in der Liste
      */
-
+    
+    /**
+     * Das erste Object in der Liste wird gegeben
+     * @return 
+     */
     public Knoten erstenGeben() {
         return null;
     }
