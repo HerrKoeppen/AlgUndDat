@@ -80,6 +80,7 @@ public class ListeTest {
         Liste testListe = new Liste();
         testListe.erster = k1;
         Liste instance = testListe;
+        instance.anzahlAktualisieren();
         int expResult = 4;
         int result = instance.anzahlGeben();
         assertEquals(expResult, result);
@@ -108,6 +109,7 @@ public class ListeTest {
         knotenc.naechsterSetzen(knotend);
 
         instance.erster = knotena;
+        instance.anzahlAktualisieren();
 
         int expResult = 4;
         int result = instance.anzahlGeben();
@@ -198,6 +200,7 @@ public class ListeTest {
 
         Liste testListe = new Liste();
         testListe.erster = k1;
+        testListe.anzahlAktualisieren();
 
         Knoten expResult = testListe.erstenGeben();
         Knoten falseResult = k2;
@@ -235,8 +238,9 @@ public class ListeTest {
         k3.naechsterSetzen(k4);
         Liste testListe = new Liste();
         testListe.erster = k1;
-        Liste instance = testListe;
-        Knoten result = instance.knotenGeben(position);
+        testListe.anzahlAktualisieren();
+
+        Knoten result = testListe.knotenGeben(position);
         Knoten expResult = k3;
         assertEquals(expResult, result);
     }
@@ -257,8 +261,9 @@ public class ListeTest {
         knotenc.naechsterSetzen(knotend);
 
         instance.erster = knotena;
+        instance.anzahlAktualisieren();
 
-        Knoten expResult = knotend;
+        Knoten expResult = knotenc;
         Knoten result = instance.knotenGeben(position);
         assertEquals(expResult, result);
 
@@ -267,7 +272,7 @@ public class ListeTest {
     @Test
     public void t3KnotenGeben() {
         System.out.println("knotenGeben - Testfall 3");
-        int position = 3;
+        int position = 1;
 
         Element e1 = new Element("Ananas");
         Element e2 = new Element("Birne");
@@ -283,6 +288,7 @@ public class ListeTest {
         Liste testListe = new Liste();
         testListe.erster = k1;
         Liste instance = testListe;
+        instance.anzahlAktualisieren();
         Knoten expResult = k1;
         Knoten result = instance.knotenGeben(position);
         assertEquals(expResult, result);
@@ -319,6 +325,7 @@ public class ListeTest {
         k3.naechsterSetzen(k4);
         Liste testListe = new Liste();
         testListe.erster = k1;
+        testListe.anzahlAktualisieren();
         int expResult = 4;
         int result = testListe.positionSuchen(k4);
         assertEquals(expResult, result);
@@ -342,6 +349,7 @@ public class ListeTest {
         knotenb.naechsterSetzen(knotenc);
         knotenc.naechsterSetzen(knotend);
         instance.erster = knotena;
+        instance.anzahlAktualisieren();
 
         int expResult = 3;
         int result = instance.positionSuchen(k);

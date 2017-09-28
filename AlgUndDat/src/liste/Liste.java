@@ -50,8 +50,8 @@ public class Liste {
             return null;
         }
         Knoten k = erster;
-        for(int i = 1; i < position - 1; i++) {
-            k = k.naechsterGeben ();
+        for(int i = 1; i <= position - 1; i++) {
+            k = k.naechsterGeben();
         }
         return k;
         
