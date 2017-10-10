@@ -10,36 +10,45 @@ package baum;
  * @author K
  */
 class Datenknoten extends Baumelement {
+
     private Baumelement mutter, vater;
     private Datenelement inhalt;
-    
-    public Datenknoten (Baumelement nl, Baumelement nr, Datenelement i){
+
+    public Datenknoten(Baumelement nl, Baumelement nr, Datenelement i) {
         mutter = nl;
         vater = nr;
         inhalt = i;
     }
+
     public void mutterSetzen(Baumelement nl) {
-        mutter=nl;
+        mutter = nl;
     }
+
     public void vaterSetzen(Baumelement nr) {
-        vater=nr;
+        vater = nr;
     }
-    public void inhaltSetzen(Datenelement i){
-      inhalt=i;
+
+    public void inhaltSetzen(Datenelement i) {
+        inhalt = i;
     }
+
     public Baumelement mutterGeben() {
         return mutter;
     }
+
     public Baumelement vaterGeben() {
         return vater;
     }
-    public Datenelement inhaltGeben(){
-      return inhalt;
+
+    public Datenelement inhaltGeben() {
+        return inhalt;
     }
+
     /////////// rekursive Baummethoden/////////////////
-    public int anzahlDatenknotenGeben(){
-       return 1+mutter.anzahlDatenknotenGeben()+vater.anzahlDatenknotenGeben();
+    public int anzahlDatenknotenGeben() {
+        return 1 + mutter.anzahlDatenknotenGeben() + vater.anzahlDatenknotenGeben();
     }
+
     // InOrder
     public void baumdatenAusgeben() {
         System.out.print(" [");
@@ -48,5 +57,21 @@ class Datenknoten extends Baumelement {
         vater.baumdatenAusgeben();
         System.out.print("] ");
     }
-}
 
+    public void baumdatenAusgebenPre() {
+        System.out.print(" [");
+        inhalt.datenAusgeben();
+        mutter.baumdatenAusgeben();
+        vater.baumdatenAusgeben();
+        System.out.print("] ");
+    }
+
+    public void baumdatenAusgebenPost() {
+        System.out.print(" [");
+        mutter.baumdatenAusgeben();
+
+        vater.baumdatenAusgeben();
+        inhalt.datenAusgeben();
+        System.out.print("] ");
+    }
+}

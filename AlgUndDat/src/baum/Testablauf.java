@@ -72,6 +72,11 @@ public class Testablauf {
         System.out.println("Vater der Mutter der Mutter von Händel: ");
         abaum.wurzelGeben().mutterGeben().mutterGeben().vaterGeben().inhaltGeben().datenAusgeben();
         
+        
     }
+    public static void main(String[] args){
+        Testablauf t = new Testablauf();
+        t.ablaufen();
+        }
 }
 

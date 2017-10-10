@@ -17,4 +17,6 @@ abstract class Baumelement {
     public abstract Datenelement inhaltGeben();
     public abstract int anzahlDatenknotenGeben();
     public abstract void baumdatenAusgeben();
+    public abstract void baumdatenAusgebenPre();
+    public abstract void baumdatenAusgebenPost();
 }

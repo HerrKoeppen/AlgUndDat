@@ -24,6 +24,11 @@ public class Ahnenbaum {
        return wurzel.anzahlDatenknotenGeben();
     }
     public void alleDatenAusgeben() {
+        System.out.println("Inorder:");
         wurzel.baumdatenAusgeben();
+        System.out.println("Preorder:");
+        wurzel.baumdatenAusgebenPre();
+        System.out.println("Postorder:");
+        wurzel.baumdatenAusgebenPost();
     }       
 }

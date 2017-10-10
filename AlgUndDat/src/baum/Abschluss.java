@@ -33,4 +33,8 @@ class Abschluss extends Baumelement {
     }
     public void baumdatenAusgeben(){
     }
+    public void baumdatenAusgebenPre(){
+    }
+    public void baumdatenAusgebenPost(){
+    }
  }
