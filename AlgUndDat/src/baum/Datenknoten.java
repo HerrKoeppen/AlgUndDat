@@ -51,27 +51,27 @@ class Datenknoten extends Baumelement {
 
     // InOrder
     public void baumdatenAusgeben() {
-        System.out.print(" [");
+        System.out.print(" [\n\t");
         mutter.baumdatenAusgeben();
         inhalt.datenAusgeben();
         vater.baumdatenAusgeben();
-        System.out.print("] ");
+        System.out.print("\n\r] ");
     }
 
     public void baumdatenAusgebenPre() {
-        System.out.print(" [");
+        System.out.print(" [\n\t");
         inhalt.datenAusgeben();
         mutter.baumdatenAusgeben();
         vater.baumdatenAusgeben();
-        System.out.print("] ");
+        System.out.print("\n\r] ");
     }
 
     public void baumdatenAusgebenPost() {
-        System.out.print(" [");
+        System.out.print(" [\n\t");
         mutter.baumdatenAusgeben();
 
         vater.baumdatenAusgeben();
         inhalt.datenAusgeben();
-        System.out.print("] ");
+        System.out.print("\n\r] ");
     }
 }
