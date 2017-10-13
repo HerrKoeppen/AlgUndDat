@@ -29,7 +29,7 @@ public class sortierteListe {
             wurzel = k;
             return;
         }
-        if (k.wertGeben() < wurzel.wertGeben()) {
+        if (k.wertGeben() <= wurzel.wertGeben()) {
             k.naechsterSetzen(wurzel);
             wurzel = k;
             return;
@@ -43,11 +43,11 @@ public class sortierteListe {
             referenz.naechsterSetzen(k);
             return;
         }
-        if (referenz.naechsterGeben().wertGeben() > k.wertGeben()) {
+        if (referenz.naechsterGeben().wertGeben() <= k.wertGeben()) {
             sortiertEinfuegenRek(k, referenz.naechsterGeben());
             return;
         }
-        if (referenz.naechsterGeben().wertGeben() <= k.wertGeben()) {
+        if (referenz.naechsterGeben().wertGeben() > k.wertGeben()) {
             k.naechsterSetzen(referenz.naechsterGeben());
             referenz.naechsterSetzen(k);
             return;
@@ -86,6 +86,20 @@ public class sortierteListe {
             wurzel = wurzel.naechsterGeben();
         }
         return knotenAlt;
+    }
+    
+    public static void main(String[] args){
+        sortierteListe s = new sortierteListe();
+        Knoten k1 = new Knoten(1); 
+        Knoten k2 = new Knoten(3);
+        Knoten k3 = new Knoten(5);
+        Knoten k4 = new Knoten(7);
+        
+        s.sortiertEinfuegen(k1);
+        s.sortiertEinfuegen(k3);
+        s.sortiertEinfuegen(k2);
+        s.sortiertEinfuegen(k4);
+        System.out.println();
     }
 
 }
