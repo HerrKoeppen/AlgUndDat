@@ -66,8 +66,7 @@ public class sortierteListe {
     public void listenInhaltGeben() {
         if (wurzel != null) {
             listenInhaltGebenRek(wurzel);
-        }
-        else{
+        } else {
             System.out.println("Liste ist leer.");
         }
     }
@@ -82,7 +81,21 @@ public class sortierteListe {
     }
 
     public int zaehleknotenInListe() {
-        return -1;
+        if(wurzel != null){
+        
+        return zahleknotenInListeRek(wurzel);}
+        else{
+            return 0;}
+
+        //return -1;
+    }
+
+    public int zahleknotenInListeRek(Knoten referenz) {
+        if (referenz.naechsterGeben() != null) {
+            return (1 + zahleknotenInListeRek(referenz.naechsterGeben()));
+        }
+        return 1;
+
     }
 
     public int summeListe() {
@@ -109,14 +122,16 @@ public class sortierteListe {
         Knoten k2 = new Knoten(3);
         Knoten k3 = new Knoten(5);
         Knoten k4 = new Knoten(7);
-        /*
+
         s.sortiertEinfuegen(k4);
         s.sortiertEinfuegen(k3);
         s.sortiertEinfuegen(k2);
         s.sortiertEinfuegen(k1);
         System.out.println();
-         */
+
         s.listenInhaltGeben();
+        System.out.println(s.zaehleknotenInListe());
+        
     }
 
 }
