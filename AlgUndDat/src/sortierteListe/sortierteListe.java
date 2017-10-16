@@ -55,7 +55,31 @@ public class sortierteListe {
     }
 
     public Knoten knotenGeben(int position) {
-        return null;
+
+        if (wurzel == null) {
+            System.out.println("Die Liste ist leer");
+            return null;
+        }
+        if (position < 0) {
+            System.out.println();
+            return null;
+        }
+        return knotenGebenRek(position, wurzel);
+
+    }
+
+    public Knoten knotenGebenRek(int position, Knoten referenz) {
+
+        if (position == 0) {
+            //System.out.println(referenz);
+            return referenz;
+        }
+        if (referenz.naechsterGeben() == null && position != 0) {
+            System.out.println("An dieser Position gibt es kein Objekt.");
+            return null;
+        }
+        return knotenGebenRek(position - 1, referenz.naechsterGeben());
+
     }
 
     // Die Liste ist sortiert!!
