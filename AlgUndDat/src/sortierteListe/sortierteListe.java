@@ -60,8 +60,20 @@ public class sortierteListe {
 
     // Die Liste ist sortiert!!
     public int positionSuchen(Knoten k) {
-        return -1;
+        return positionSuchenRek(k , wurzel, 0);
     }
+    public int positionSuchenRek(Knoten k, Knoten referenz, int a) {
+        
+        if (referenz == null){
+        return -1;
+        }     
+        
+        else if (referenz != k){
+        a = positionSuchenRek(k,referenz.naechsterGeben(),a)+1;
+        }        
+        return a;
+    }
+
 
     public void listenInhaltGeben() {
         if (wurzel != null) {
