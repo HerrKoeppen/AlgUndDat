@@ -18,18 +18,20 @@ import java.util.logging.Logger;
 public class BinBaumBsp0 // ----------------------------------
 {
 
-    public void ablaufen() {
+    public static void main(String[] arg) {
         BinaerBaum baum2 = new BinaerBaum();
-        Knoten[] dieKnoten = new Knoten[20];
+        //Knoten[] dieKnoten = new Knoten[20];
         for (int i = 0; i < 20; i++) {
-            dieKnoten[i] = new Knoten(i);
-            baum2.fuegeEinNachTiefe(dieKnoten[i]);
+            baum2.fuegeEinNachTiefe(i);
         }
+        System.out.println("InOrder-Traversierung: ");
         baum2.laufeDurch();
-        System.out.println(baum2.tiefe(baum2.wurzel));
+        System.out.println();
+        System.out.println("Tiefe: "+baum2.tiefe(baum2.wurzel));
     }
 
-    public static void main(String[] arg) {
+    public void ablaufen() {
+
         BinaerBaum baum = new BinaerBaum();
         int zahl = 0;
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
