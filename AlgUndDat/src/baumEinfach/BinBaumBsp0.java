@@ -21,11 +21,11 @@ public class BinBaumBsp0 // ----------------------------------
     public static void main(String[] arg) {
         BinaerBaum baum2 = new BinaerBaum();
         //Knoten[] dieKnoten = new Knoten[20];
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i <20; i++) {
             baum2.fuegeEinNachTiefe(i);
         }
         System.out.println("InOrder-Traversierung: ");
-        baum2.laufeDurch();
+        baum2.laufeDurchFormat();
         System.out.println();
         System.out.println("Tiefe: "+baum2.tiefe(baum2.wurzel));
     }

@@ -56,6 +56,38 @@ public class BinaerBaum // ------------------------------------
         }
     } // laufeDurch
 
+    
+    void rekLaufeDurchFormat(Knoten ast, int tiefe) {
+        if (ast != null) {
+            rekLaufeDurchFormat(ast.links,tiefe+1);
+            String ausgabe = "";
+            for (int i=0;i<tiefe;i++){
+                ausgabe += "\t";
+            }
+            ausgabe += ast.inhalt;
+            System.out.println(ausgabe);
+            System.out.println();
+            rekLaufeDurchFormat(ast.rechts,tiefe+1);
+        }
+        else{
+            String ausgabe = "";
+            for (int i=0;i<tiefe;i++){
+                ausgabe += "\t";
+            }
+            ausgabe += "X";
+            System.out.println(ausgabe);
+            System.out.println();
+        }
+    } // rekLaufeDurch
+
+    void laufeDurchFormat() {
+        if (wurzel != null) {
+            rekLaufeDurchFormat(wurzel.links,1);
+            System.out.print(wurzel.inhalt);
+            System.out.println();
+            rekLaufeDurchFormat(wurzel.rechts,1);
+        }
+    } // laufeDurch
     public int tiefe(Knoten ast) {
         if (ast == null) {
             return 0;
