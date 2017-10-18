@@ -19,15 +19,35 @@ public class BinBaumBsp0 // ----------------------------------
 {
 
     public static void main(String[] arg) {
+        BinaerBaum b3 = new BinaerBaum();
+        /*
+        Knoten k1,k2,k3,k4;
+        k1 = new Knoten(4);
+        k2 = new Knoten(2);
+        k3 = new Knoten(16);
+        k4 = new Knoten(7);
+        b3.wurzel = k1;
+        b3.wurzel.links = k2;
+        b3.wurzel.rechts = k3;
+        b3.wurzel.links.links = k4;
+*/
+        for (int i=0;i<20;i++){
+            b3.fuegeEinNachTiefe(i);
+        }
+        System.out.println(b3.tiefe(b3.wurzel));
+        b3.laufeDurchFormat();
+    }
+
+    public static void ablaufen2() {
         BinaerBaum baum2 = new BinaerBaum();
         //Knoten[] dieKnoten = new Knoten[20];
-        for (int i = 0; i <8; i++) {
+        for (int i = 0; i < 8; i++) {
             baum2.fuegeEin(i);
         }
         //System.out.println("InOrder-Traversierung: ");
         baum2.laufeDurchFormat();
         System.out.println();
-        System.out.println("Tiefe: "+baum2.tiefe(baum2.wurzel));
+        System.out.println("Tiefe: " + baum2.tiefe(baum2.wurzel));
     }
 
     public void ablaufen() {

@@ -13,6 +13,7 @@ public class BinaerBaum // ------------------------------------
 {
 
     Knoten wurzel = null;
+
     //Sortiertes Einfügen!
     void rekFuegeEin(Knoten ast, int wert) {
         if (wert < ast.inhalt) { // links einfuegen
@@ -29,6 +30,7 @@ public class BinaerBaum // ------------------------------------
             }
         }
     }
+
     //Sortiertes Einfügen!
     void fuegeEin(int wert) {
         if (wurzel == null) {
@@ -56,22 +58,20 @@ public class BinaerBaum // ------------------------------------
         }
     } // laufeDurch
 
-    
     void rekLaufeDurchFormat(Knoten ast, int tiefe) {
         if (ast != null) {
-            rekLaufeDurchFormat(ast.links,tiefe+1);
+            rekLaufeDurchFormat(ast.links, tiefe + 1);
             String ausgabe = "";
-            for (int i=0;i<tiefe;i++){
+            for (int i = 0; i < tiefe; i++) {
                 ausgabe += "\t";
             }
             ausgabe += ast.inhalt;
             System.out.println(ausgabe);
             System.out.println();
-            rekLaufeDurchFormat(ast.rechts,tiefe+1);
-        }
-        else{
+            rekLaufeDurchFormat(ast.rechts, tiefe + 1);
+        } else {
             String ausgabe = "";
-            for (int i=0;i<tiefe;i++){
+            for (int i = 0; i < tiefe; i++) {
                 ausgabe += "\t";
             }
             ausgabe += "X";
@@ -82,15 +82,25 @@ public class BinaerBaum // ------------------------------------
 
     void laufeDurchFormat() {
         if (wurzel != null) {
-            rekLaufeDurchFormat(wurzel.links,1);
+            rekLaufeDurchFormat(wurzel.links, 1);
             System.out.print(wurzel.inhalt);
             System.out.println();
-            rekLaufeDurchFormat(wurzel.rechts,1);
+            rekLaufeDurchFormat(wurzel.rechts, 1);
         }
     } // laufeDurch
+
     public int tiefe(Knoten ast) {
-        return -1;
+        if (ast == null) {
+            return 0;
+        } else {
+            if (tiefe(ast.links) > tiefe(ast.rechts)) {
+                return 1 + tiefe(ast.links);
+            } else {
+                return 1 + tiefe(ast.rechts);
+            }
+        }
     }
+
     //Balanciertes Einfügen!
     public void fuegeEinNachTiefe(int wert) {
         if (wurzel == null) {
@@ -99,9 +109,30 @@ public class BinaerBaum // ------------------------------------
             fuegeEinNachTiefeRek(wurzel, wert);
         }
     }
+
     //Balanciertes Einfügen!
     public void fuegeEinNachTiefeRek(Knoten referenz, int wert) {
-        return;
+        if (referenz == null) {
+            referenz = new Knoten(wert);
+            return;
+        }
+        if (referenz.links == null) {
+            referenz.links = new Knoten(wert);
+            return;
+        }
+        if (referenz.rechts == null) {
+            referenz.rechts = new Knoten(wert);
+            return;
+        }
+        if (tiefe(referenz.links) < tiefe(referenz.rechts)) {
+            fuegeEinNachTiefeRek(referenz.links, wert);
+            return;
+        }
+        if (tiefe(referenz.links) >= tiefe(referenz.rechts)) {
+            fuegeEinNachTiefeRek(referenz.rechts, wert);
+            return;
+        }
+
     }
 } // class BinaerBaum
 
