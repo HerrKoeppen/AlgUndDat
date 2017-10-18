@@ -135,11 +135,39 @@ public class sortierteListe {
     }
 
     public int summeListe() {
-        return -1;
+        if (wurzel==null){
+            return 0;
+        }
+        else{
+            return summeListeRek(wurzel);
+        }
+    }
+    
+    public int summeListeRek(Knoten referenz){
+        if (referenz.naechsterGeben()==null){
+            return referenz.wertGeben();
+        }
+        else{
+            return referenz.wertGeben()+summeListeRek(referenz.naechsterGeben());
+        }
     }
 
     public int produktListe() {
-        return -1;
+        if (wurzel==null){
+            return 0;
+        }
+        else{
+            return produktListeRek(wurzel);
+        }
+    }
+    
+    public int produktListeRek(Knoten referenz){
+        if (referenz.naechsterGeben()==null){
+            return referenz.wertGeben();
+        }
+        else{
+            return referenz.wertGeben()*summeListeRek(referenz.naechsterGeben());
+        }
     }
 
     public Knoten obenEntnehmen() {
