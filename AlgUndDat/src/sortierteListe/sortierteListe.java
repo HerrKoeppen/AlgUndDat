@@ -89,7 +89,7 @@ public class sortierteListe {
     public int positionSuchenRek(Knoten k, Knoten referenz, int a) {
         
         if (referenz == null){
-        return -1;
+        return -(zaehleknotenInListe())-1;
         }     
         
         else if (referenz != k){
@@ -159,14 +159,15 @@ public class sortierteListe {
         Knoten k3 = new Knoten(5);
         Knoten k4 = new Knoten(7);
 
-        s.sortiertEinfuegen(k4);
-        s.sortiertEinfuegen(k3);
-        s.sortiertEinfuegen(k2);
-        s.sortiertEinfuegen(k1);
+        //s.sortiertEinfuegen(k4);
+        //s.sortiertEinfuegen(k3);
+        //s.sortiertEinfuegen(k2);
+        //s.sortiertEinfuegen(k1);
         System.out.println();
 
         s.listenInhaltGeben();
         System.out.println(s.zaehleknotenInListe());
+        System.out.println(s.positionSuchen(k4));
         
     }
 
