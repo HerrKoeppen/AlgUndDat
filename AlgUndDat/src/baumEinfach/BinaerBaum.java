@@ -89,11 +89,7 @@ public class BinaerBaum // ------------------------------------
         }
     } // laufeDurch
     public int tiefe(Knoten ast) {
-        if (ast == null) {
-            return 0;
-        } else {
-            return 1 + (Math.max(tiefe(ast.links), tiefe(ast.rechts)));
-        }
+        return -1;
     }
     //Balanciertes Einfügen!
     public void fuegeEinNachTiefe(int wert) {
@@ -105,19 +101,7 @@ public class BinaerBaum // ------------------------------------
     }
     //Balanciertes Einfügen!
     public void fuegeEinNachTiefeRek(Knoten referenz, int wert) {
-        if (referenz == null) {
-            referenz = new Knoten(wert);
-        } else {
-            if (referenz.links == null) {
-                referenz.links = new Knoten(wert);
-            } else if (referenz.rechts == null) {
-                referenz.rechts = new Knoten(wert);
-            } else if (tiefe(referenz.links) <= tiefe(referenz.rechts)) {
-                fuegeEinNachTiefeRek(referenz.links, wert);
-            } else {
-                fuegeEinNachTiefeRek(referenz.rechts, wert);
-            }
-        }
+        return;
     }
 } // class BinaerBaum
 
