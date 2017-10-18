@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package baum;
+package graph;
 
 /**
  *
- * @author K
+ * @author koeppen
  */
-abstract class Datenelement {
-    public abstract void datenAusgeben();
+public class Graph {
+    
 }
-
