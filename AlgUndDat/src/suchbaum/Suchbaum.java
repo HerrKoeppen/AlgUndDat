@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package baumEinfach;
+package suchbaum;
 
 /**
  *
  * @author K
  */
-public class BinaerBaum // ------------------------------------
+public class Suchbaum // ------------------------------------
 {
 
     Knoten wurzel = null;
@@ -101,38 +101,5 @@ public class BinaerBaum // ------------------------------------
         }
     }
 
-    //Balanciertes Einfügen!
-    public void fuegeEinNachTiefe(int wert) {
-        if (wurzel == null) {
-            wurzel = new Knoten(wert);
-        } else {
-            fuegeEinNachTiefeRek(wurzel, wert);
-        }
-    }
-
-    //Balanciertes Einfügen!
-    public void fuegeEinNachTiefeRek(Knoten referenz, int wert) {
-        if (referenz == null) {
-            referenz = new Knoten(wert);
-            return;
-        }
-        if (referenz.links == null) {
-            referenz.links = new Knoten(wert);
-            return;
-        }
-        if (referenz.rechts == null) {
-            referenz.rechts = new Knoten(wert);
-            return;
-        }
-        if (tiefe(referenz.links) < tiefe(referenz.rechts)) {
-            fuegeEinNachTiefeRek(referenz.links, wert);
-            return;
-        }
-        if (tiefe(referenz.links) >= tiefe(referenz.rechts)) {
-            fuegeEinNachTiefeRek(referenz.rechts, wert);
-            return;
-        }
-
-    }
 } // class BinaerBaum
 

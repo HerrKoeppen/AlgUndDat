@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package baumEinfach;
+package binaerbaum;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class BinBaumBsp0 // ----------------------------------
         BinaerBaum baum2 = new BinaerBaum();
         //Knoten[] dieKnoten = new Knoten[20];
         for (int i = 0; i < 8; i++) {
-            baum2.fuegeEin(i);
+            baum2.fuegeEinNachAnzahlElemente(i);
         }
         //System.out.println("InOrder-Traversierung: ");
         baum2.laufeDurchFormat();
@@ -66,7 +66,7 @@ public class BinBaumBsp0 // ----------------------------------
                 Logger.getLogger(BinBaumBsp0.class.getName()).log(Level.SEVERE, null, ex);
             }
             if (zahl != -1) {
-                baum.fuegeEin(zahl);
+                baum.fuegeEinNachAnzahlElemente(zahl);
             }
         } // while
         baum.laufeDurch();
