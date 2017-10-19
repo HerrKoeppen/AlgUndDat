@@ -110,12 +110,25 @@ public class BinaerBaum // ------------------------------------
 
     }
 
-    public int anzahlElemente(Knoten referenz) {
+    public int anzahlElementeRek(Knoten referenz) {
         return -1;
     }
 
     public void fuegeEinNachAnzahlElemente(int wert) {
+        if (wurzel == null) {
+            wurzel = new Knoten(wert);
+        } else {
+            fuegeEinNachAnzahlElementeRek(wurzel, wert);
+        }
+    }
+
+    public void fuegeEinNachAnzahlElementeRek(Knoten referenz, int wert) {
         return;
+
+    }
+    
+    public boolean suche(int wert){
+        return false;
     }
 } // class BinaerBaum
 

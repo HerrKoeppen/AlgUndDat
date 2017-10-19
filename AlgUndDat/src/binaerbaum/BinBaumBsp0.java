@@ -20,6 +20,7 @@ public class BinBaumBsp0 // ----------------------------------
 
     public static void main(String[] arg) {
         BinaerBaum b3 = new BinaerBaum();
+        BinaerBaum b4 = new BinaerBaum();
         /*
         Knoten k1,k2,k3,k4;
         k1 = new Knoten(4);
@@ -31,11 +32,16 @@ public class BinBaumBsp0 // ----------------------------------
         b3.wurzel.rechts = k3;
         b3.wurzel.links.links = k4;
 */
-        for (int i=0;i<20;i++){
+        for (int i=0;i<7;i++){
             b3.fuegeEinNachTiefe(i);
+            b4.fuegeEinNachAnzahlElemente(i);
         }
-        System.out.println(b3.tiefe(b3.wurzel));
+        System.out.println("Tiefe: "+b3.tiefe(b3.wurzel));
         b3.laufeDurchFormat();
+        System.out.println("Tiefe: "+b4.tiefe(b4.wurzel));
+        b4.laufeDurchFormat();
+        
+        System.out.println("Anzahl Elemente im Baum: " + b3.anzahlElementeRek(b3.wurzel));
     }
 
     public static void ablaufen2() {
@@ -48,6 +54,7 @@ public class BinBaumBsp0 // ----------------------------------
         baum2.laufeDurchFormat();
         System.out.println();
         System.out.println("Tiefe: " + baum2.tiefe(baum2.wurzel));
+        System.out.println("Anzahl Elemente im Baum: " + baum2.anzahlElementeRek(baum2.wurzel));
     }
 
     public void ablaufen() {

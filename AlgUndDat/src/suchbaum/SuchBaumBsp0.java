@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  *
  * @author K
  */
-public class BinBaumBsp0 // ----------------------------------
+public class SuchBaumBsp0 // ----------------------------------
 {
 
     public static void main(String[] arg) {
@@ -63,7 +63,7 @@ public class BinBaumBsp0 // ----------------------------------
             try {
                 zahl = Integer.parseInt(in.readLine());
             } catch (IOException ex) {
-                Logger.getLogger(BinBaumBsp0.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(SuchBaumBsp0.class.getName()).log(Level.SEVERE, null, ex);
             }
             if (zahl != -1) {
                 baum.fuegeEin(zahl);

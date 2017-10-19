@@ -10,5 +10,14 @@ package graph;
  * @author koeppen
  */
 public class Graph {
-    
+    private Knoten[] knotenliste;
+    private boolean[][] adjazenzmatrix;
+    private int maxAnzahl;
+    private int anzahl;
+    public Graph(int m){
+        maxAnzahl = m;
+        anzahl = 0;
+        knotenliste = new Knoten[m];
+        adjazenzmatrix = new boolean[m][m];
+    }
 }
