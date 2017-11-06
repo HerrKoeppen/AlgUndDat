@@ -110,8 +110,14 @@ public class BinaerBaum // ------------------------------------
 
     }
 
-    public int anzahlElementeRek(Knoten referenz) {
-        return -1;
+    public int anzahlElementeRek(Knoten ast) {
+        if (ast == null) {
+            return 0;
+        } else {
+
+            return 1 + anzahlElementeRek(ast.links)+anzahlElementeRek(ast.rechts);
+
+        }
     }
 
     public void fuegeEinNachAnzahlElemente(int wert) {
@@ -123,12 +129,50 @@ public class BinaerBaum // ------------------------------------
     }
 
     public void fuegeEinNachAnzahlElementeRek(Knoten referenz, int wert) {
-        return;
+        if (referenz == null) {
+            referenz = new Knoten(wert);
+            return;
+        }
+        if (referenz.links == null) {
+            referenz.links = new Knoten(wert);
+            return;
+        }
+        if (referenz.rechts == null) {
+            referenz.rechts = new Knoten(wert);
+            return;
+        }
+        if (anzahlElementeRek(referenz.links) < anzahlElementeRek(referenz.rechts)) {
+            fuegeEinNachAnzahlElementeRek(referenz.links, wert);
+            return;
+        }
+        if (anzahlElementeRek(referenz.links) >= anzahlElementeRek(referenz.rechts)) {
+            fuegeEinNachAnzahlElementeRek(referenz.rechts, wert);
+            return;
+        }
 
     }
+
+    public boolean suche(int wert) {
+        if (wurzel == null) {
+            return false;
+        } else {
+            return sucheRek(wert, wurzel);
+        }
+    }
     
-    public boolean suche(int wert){
-        return false;
+    public boolean sucheRek(int wert, Knoten ast){
+        if (ast.inhalt==wert){
+            return true;
+        }
+        else{
+            if(ast.links!=null){
+                return sucheRek(wert,ast.links);
+            }
+            if (ast.rechts!=null){
+                return sucheRek(wert,ast.rechts);
+            }
+            return false;
+        }
     }
 } // class BinaerBaum
 

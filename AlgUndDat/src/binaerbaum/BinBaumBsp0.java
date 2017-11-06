@@ -42,6 +42,9 @@ public class BinBaumBsp0 // ----------------------------------
         b4.laufeDurchFormat();
         
         System.out.println("Anzahl Elemente im Baum: " + b3.anzahlElementeRek(b3.wurzel));
+        
+        System.out.println(b3.suche(0));
+        System.out.println(b3.suche(6));
     }
 
     public static void ablaufen2() {
