@@ -100,6 +100,11 @@ public class Suchbaum // ------------------------------------
             }
         }
     }
+    
+    public boolean suche(int wert){
+        return false;
+    }
+    
 
 } // class BinaerBaum
 

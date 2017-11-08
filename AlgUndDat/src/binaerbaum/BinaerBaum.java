@@ -115,7 +115,7 @@ public class BinaerBaum // ------------------------------------
             return 0;
         } else {
 
-            return 1 + anzahlElementeRek(ast.links)+anzahlElementeRek(ast.rechts);
+            return 1 + anzahlElementeRek(ast.links) + anzahlElementeRek(ast.rechts);
 
         }
     }
@@ -159,20 +159,25 @@ public class BinaerBaum // ------------------------------------
             return sucheRek(wert, wurzel);
         }
     }
-    
-    public boolean sucheRek(int wert, Knoten ast){
-        if (ast.inhalt==wert){
-            return true;
-        }
-        else{
-            if(ast.links!=null){
-                return sucheRek(wert,ast.links);
-            }
-            if (ast.rechts!=null){
-                return sucheRek(wert,ast.rechts);
-            }
+
+    public boolean sucheRek(int wert, Knoten ast) {
+        if (ast == null) {
             return false;
         }
+        if (ast.inhalt == wert) {
+            return true;
+        }
+
+        if (ast.links != null && ast.rechts != null) {
+            return sucheRek(wert, ast.links) || sucheRek(wert, ast.rechts);
+        }
+
+        if (ast.rechts != null) {
+            return sucheRek(wert, ast.rechts);
+        }
+
+        return sucheRek(wert, ast.links);
+
     }
 } // class BinaerBaum
 
