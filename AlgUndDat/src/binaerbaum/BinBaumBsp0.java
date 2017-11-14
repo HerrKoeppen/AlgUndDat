@@ -33,7 +33,7 @@ public class BinBaumBsp0 // ----------------------------------
         b3.wurzel.links.links = k4;
 */
         for (int i=0;i<7;i++){
-            b3.fuegeEinNachTiefe(i);
+            b3.fuegeEinNachTiefe(0);
             b4.fuegeEinNachAnzahlElemente(i);
         }
         System.out.println("Tiefe: "+b3.tiefe(b3.wurzel));
@@ -42,6 +42,9 @@ public class BinBaumBsp0 // ----------------------------------
         b4.laufeDurchFormat();
         
         System.out.println("Anzahl Elemente im Baum: " + b3.anzahlElementeRek(b3.wurzel));
+        for (int i=0;i<20;i++){
+            System.out.println("Ergebnis von suche("+i+"): "+b3.suche(i));
+        }
     }
 
     public static void ablaufen2() {
