@@ -27,4 +27,8 @@ public class Knoten {
     public void setzeMarkierung(boolean b){
         markierung = b;
     }
+    
+    public void initialisierungKnotenTiefensuche(){
+        markierung = false;
+    }
 }
